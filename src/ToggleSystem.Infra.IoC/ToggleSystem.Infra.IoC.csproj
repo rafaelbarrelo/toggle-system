@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>ToggleSystem.Infra.IoC</AssemblyName>
+    <RootNamespace>ToggleSystem.Infra.IoC</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToggleSystem.Domain\ToggleSystem.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
