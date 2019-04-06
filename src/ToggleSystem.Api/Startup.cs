@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using ToggleSystem.Infra.Data.Context;
 using ToggleSystem.Infra.IoC;
 
 namespace ToggleSystem.Api
@@ -27,6 +26,7 @@ namespace ToggleSystem.Api
 
             services
                 .RegisterDependencies(Configuration)
+                .AddAutoMapper()
                 .AddSwaggerGen(s =>
                 {
                     s.SwaggerDoc("v1", new Info
@@ -36,7 +36,6 @@ namespace ToggleSystem.Api
                         Description = "Swagger Endpoints"
                     });
                 });
-
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
