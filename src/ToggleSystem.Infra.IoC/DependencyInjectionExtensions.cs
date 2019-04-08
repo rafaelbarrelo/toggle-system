@@ -19,7 +19,7 @@ namespace ToggleSystem.Infra.IoC
                 .AddDbContext<ToggleContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
                 .RegistrerServices()
                 .RegistrerRepositories();
-                
+            
             return services;
         }
 

@@ -12,5 +12,8 @@ namespace ToggleSystem.Api.Models.Response
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "value")]
+        public bool Value { get; set; }
     }
 }

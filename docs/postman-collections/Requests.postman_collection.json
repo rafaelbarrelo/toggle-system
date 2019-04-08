@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "5fb6fc92-3152-49f8-8932-d849eb52fd2f",
+		"name": "Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"admin\",\r\n  \"password\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/Account/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "App1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"application1\",\r\n  \"password\": \"1234\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/Account/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Toggles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhcHBsaWNhdGlvbjEiLCJqdGkiOiIwODhmZWE3Yy01NzNkLTRmZmItODNhOC03OWU4YTM0MzhhYTMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRjYmRkNDk1LWZkMDItNGZjZi04YTgzLTRkYTY4ZmFhY2NiOCIsIlRvZ2dsZSI6IkdldCIsImV4cCI6MTU1NDY5NTc5OCwiaXNzIjoiaHR0cHM6Ly90b2dnbGUuc3lzdGVtLmNvbSIsImF1ZCI6Imh0dHBzOi8vdG9nZ2xlLnN5c3RlbS5jb20ifQ.0-GEzYg7QyEBk4kz4k5haG8hx3RPjwjOVXiRPr02ndU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}/api/toggle/application1/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"toggle",
+						"application1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

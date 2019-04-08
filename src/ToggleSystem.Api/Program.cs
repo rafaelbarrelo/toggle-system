@@ -11,7 +11,7 @@ namespace ToggleSystem.Api
     {
         public static async Task Main(string[] args)
         {
-            var host = CreateWebHost(args);
+            var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -30,9 +30,8 @@ namespace ToggleSystem.Api
             host.Run();
         }
 
-        public static IWebHost CreateWebHost(string[] args) =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+                .UseStartup<Startup>();
     }
 }

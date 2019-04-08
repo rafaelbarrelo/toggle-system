@@ -44,6 +44,7 @@ namespace ToggleSystem.Infra.Identity.Services
             {
                 // Log error
             }
+
         }
 
         public async Task<bool> SignIn(string username, string password)

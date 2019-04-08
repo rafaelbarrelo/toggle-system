@@ -4,6 +4,7 @@
     {
         False,
         True,
-        Excluded
+        Excluded,
+        Exclusive
     }
 }

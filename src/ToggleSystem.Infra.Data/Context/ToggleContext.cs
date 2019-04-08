@@ -8,12 +8,14 @@ namespace ToggleSystem.Infra.Data.Context
     public class ToggleContext : IdentityDbContext
     {
         public DbSet<Toggle> Toggles { get; set; }
+        public DbSet<ToggleUser> ToggleUsers { get; set; }
 
         public ToggleContext(DbContextOptions<ToggleContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ToggleMap());
+            modelBuilder.ApplyConfiguration(new ToggleUserMap());
 
             base.OnModelCreating(modelBuilder);
         }
