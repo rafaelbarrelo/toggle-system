@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ToggleSystem.Domain.Entities;
 using ToggleSystem.Infra.Data.Mappings;
 
 namespace ToggleSystem.Infra.Data.Context
 {
-    public class ToggleContext : DbContext
+    public class ToggleContext : IdentityDbContext
     {
         public DbSet<Toggle> Toggles { get; set; }
 

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using ToggleSystem.Infra.Identity.Extensions;
 using ToggleSystem.Infra.IoC;
 
 namespace ToggleSystem.Api
@@ -26,6 +27,7 @@ namespace ToggleSystem.Api
 
             services
                 .RegisterDependencies(Configuration)
+                .AddSecurityConfiguration(Configuration)
                 .AddAutoMapper()
                 .AddSwaggerGen(s =>
                 {
@@ -53,6 +55,7 @@ namespace ToggleSystem.Api
                .UseCors(c => c.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())
                .UseSwagger()
                .UseSwaggerUI(s => s.SwaggerEndpoint("/swagger/v1/swagger.json", "Toggle System API v1"))
+               .UseAuthentication()
                .UseMvc();
         }
     }

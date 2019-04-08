@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ToggleSystem.Domain\ToggleSystem.Domain.csproj" />
     <ProjectReference Include="..\ToggleSystem.Infra.Data\ToggleSystem.Infra.Data.csproj" />
+    <ProjectReference Include="..\ToggleSystem.Infra.Identity\ToggleSystem.Infra.Identity.csproj" />
     <ProjectReference Include="..\ToggleSystem.Infra.IoC\ToggleSystem.Infra.IoC.csproj" />
   </ItemGroup>
 

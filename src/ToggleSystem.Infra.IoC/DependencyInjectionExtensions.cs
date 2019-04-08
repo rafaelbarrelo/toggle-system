@@ -6,6 +6,8 @@ using ToggleSystem.Domain.Interfaces.Services;
 using ToggleSystem.Domain.Services;
 using ToggleSystem.Infra.Data.Context;
 using ToggleSystem.Infra.Data.Repositories;
+using ToggleSystem.Infra.Identity.Interfaces;
+using ToggleSystem.Infra.Identity.Services;
 
 namespace ToggleSystem.Infra.IoC
 {
@@ -23,6 +25,8 @@ namespace ToggleSystem.Infra.IoC
 
         private static IServiceCollection RegistrerServices(this IServiceCollection services)
         {
+            services.AddScoped<ISecurityService, SecurityService>();
+
             services.AddScoped<IToggleService, ToggleService>();
 
             return services;
